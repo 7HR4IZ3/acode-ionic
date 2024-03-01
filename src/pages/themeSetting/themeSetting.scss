@@ -1,0 +1,19 @@
+#theme-setting {
+  display: flex;
+  flex-direction: column;
+
+  #theme-preview:not(:empty) {
+    height: 120px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 4px var(--box-shadow-color);
+    pointer-events: none;
+  }
+
+  .icon.color.custom::before {
+    background-color: var(--primary-color);
+  }
+
+  #theme-list {
+    flex: 1;
+  }
+}

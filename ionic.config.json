@@ -1,0 +1,7 @@
+{
+  "name": "acode-ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "custom"
+}

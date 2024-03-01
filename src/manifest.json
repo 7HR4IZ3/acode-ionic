@@ -1,0 +1,13 @@
+{
+  "name": "Acode Native",
+  "short_name": "Acode Native",
+  "start_url": "index.html",
+  "display": "standalone",
+  "icons": [{
+    "src": "assets/res/logo/logo.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "background_color": "#31d53d",
+  "theme_color": "#31d53d"
+}

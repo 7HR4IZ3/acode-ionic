@@ -1,0 +1,96 @@
+<li action="file-info" {{^file_on_disk}}class="disabled" {{/file_on_disk}}>
+  <span class="text">{{file properties}}</span>
+  <span class="icon info"></span>
+</li>
+<hr>
+<li action="rename">
+  <span class="text">{{rename}}</span>
+</li>
+<li action="syntax">
+  <div class="text">
+    <span>{{syntax highlighting}}</span>
+    <span class="value">{{file_mode}}</span>
+  </div>
+</li>
+<li action="encoding" {{^file_on_disk}}class="disabled" {{/file_on_disk}}>
+  <div class="text">
+    <span>{{encoding}}</span>
+    <span class="value">{{file_encoding}}</span>
+  </div>
+</li>
+<li action="eol">
+  <div class="text">
+    <span>{{new line mode}}</span>
+    <span class="value">{{file_eol}}</span>
+  </div>
+</li>
+<li action="read-only">
+  <div class="text">
+    <span>{{read only}}</span>
+  </div>
+  <label class="input-checkbox">
+    <input type="checkbox" {{#file_read_only}}checked{{/file_read_only}}>
+    <span class="box"></span>
+  </label>
+</li>
+<li action="format">
+  <div class="text">
+    <span>{{format}}</span>
+  </div>
+</li>
+<hr>
+{{#file_on_disk}}
+<li action="share">
+  <span class="text">{{share}}</span>
+  <span class="icon share"></span>
+</li>
+<li action="open-with">
+  <span class="text">{{open with}}</span>
+  <span class="icon open_in_browser"></span>
+</li>
+<li action="edit-with">
+  <span class="text">{{edit with}}</span>
+  <span class="icon edit"></span>
+</li>
+{{/file_on_disk}}
+<hr>
+<li action="find">
+  <span class="text">{{search}}</span>
+  <span class="icon search"></span>
+</li>
+<li action="goto">
+  <span class="text">{{goto}}</span>
+  <span class="icon subdirectory_arrow_left"></span>
+</li>
+<hr>
+{{^file_read_only}}
+<li action="insert-color">
+  <span class="text">{{insert color}}</span>
+  <span class="icon color_lenspalette"></span>
+</li>
+<hr>
+{{#copy_text}}
+<li action="cut">
+  <div class="text">
+    <span>{{cut}}</span>
+  </div>
+</li>
+{{/copy_text}}
+<li action="paste">
+  <div class="text">
+    <span>{{paste}}</span>
+  </div>
+</li>
+{{/file_read_only}}
+{{#copy_text}}
+<li action="copy">
+  <div class="text">
+    <span>{{copy}}</span>
+  </div>
+</li>
+{{/copy_text}}
+<li action="select-all">
+  <div class="text">
+    <span>{{select all}}</span>
+  </div>
+</li>

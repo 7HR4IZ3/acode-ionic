@@ -1,0 +1,14 @@
+{
+  "appId": "com.foxdebug.acodeionic",
+  "appName": "Acode",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "server": {
+    "androidScheme": "https",
+    "cleartext": true
+  }
+}

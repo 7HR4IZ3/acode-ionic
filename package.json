@@ -1,0 +1,62 @@
+{
+  "name": "capacitor-app",
+  "version": "1.0.0",
+  "description": "An Amazing Capacitor App",
+  "main": "index.js",
+  "keywords": [
+    "capacitor",
+    "mobile"
+  ],
+  "scripts": {
+    "start": "vite",
+    "build": "vite build && cp -r src/assets/js dist/assets/",
+    "build:apk": "cap build android --keystorepath debug.keystore --keystorepass Avengers2k19 --keystorealias Acode --keystorealiaspass Avengers2k19  --androidreleasetype APK",
+    "preview": "vite preview",
+    "ionic:serve": "vite"
+  },
+  "dependencies": {
+    "@acode/native": "file:src/native",
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.23.9",
+    "@babel/plugin-transform-runtime": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "@babel/runtime": "^7.23.9",
+    "@babel/runtime-corejs3": "^7.23.9",
+    "@capacitor/android": "^5.7.0",
+    "@capacitor/app": "^5.0.7",
+    "@capacitor/camera": "latest",
+    "@capacitor/clipboard": "^5.0.7",
+    "@capacitor/core": "^5.7.0",
+    "@capacitor/device": "^5.0.7",
+    "@capacitor/filesystem": "^5.2.1",
+    "@capacitor/splash-screen": "latest",
+    "@deadlyjack/ajax": "^1.2.6",
+    "@ungap/custom-elements": "^1.3.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autosize": "^6.0.1",
+    "brace": "^0.11.1",
+    "crypto-js": "^4.2.0",
+    "escape-string-regexp": "^5.0.0",
+    "esprima": "^4.0.1",
+    "filesize": "^10.1.0",
+    "html-tag-js": "^1.3.0",
+    "js-base64": "^3.7.6",
+    "jszip": "^3.10.1",
+    "marked": "5.0.5",
+    "marked-mangle": "^1.1.4",
+    "mime-types": "^2.1.35",
+    "minimatch": "^9.0.3",
+    "mustache": "^4.2.0",
+    "react": "^18.2.0",
+    "url-parse": "^1.5.10",
+    "vanilla-picker": "^2.12.2",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^5.7.0",
+    "sass": "^1.71.1",
+    "vite": "^4.5.2"
+  },
+  "author": "",
+  "license": "ISC"
+}

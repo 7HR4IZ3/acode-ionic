@@ -1,0 +1,28 @@
+.container.files {
+  &:empty {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+      content: attr(data-msg);
+      font-weight: 600;
+    }
+  }
+
+  .list .icon.more_vert {
+    position: sticky;
+    right: 0;
+  }
+
+  .tile:not(.light) .icon.more_vert::before {
+    background-color: rgb(153, 153, 255);
+    background-color: var(--primary-color);
+    color: rgb(255, 255, 255);
+    color: var(--primary-text-color);
+    box-shadow: 0 0 5px 0 rgb(153, 153, 255);
+    box-shadow: 0 0 5px 0 var(--primary-color);
+  }
+}

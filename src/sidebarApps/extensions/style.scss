@@ -1,0 +1,23 @@
+@import '../../styles/mixins.scss';
+
+.container.extensions {
+  .list.search-result {
+    min-height: 0;
+
+    &.loading {
+      @include loader(20px);
+    }
+  }
+
+  .tile {
+    .text {
+      &.sub-text {
+        font-size: 0.8rem;
+
+        &::after {
+          font-size: 0.7rem;
+        }
+      }
+    }
+  }
+}

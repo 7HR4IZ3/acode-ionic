@@ -1,0 +1,333 @@
+@import '../../styles/mixins.scss';
+
+#plugin {
+  overflow: auto;
+  max-width: 800px;
+  margin: auto;
+
+  .header {
+    display: flex;
+    flex-direction: column;
+
+    .author {
+      display: flex;
+      padding: 10px 0;
+      gap: 2px;
+
+      .verified {
+        height: 12px;
+        width: 12px;
+        background-size: contain;
+        background-position: center;
+      }
+    }
+
+    .tag {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 20px;
+      height: 20px;
+      width: fit-content;
+      padding: 0 10px;
+      border-radius: 10px;
+      background-color: rgb(51, 153, 255);
+      background-color: var(--button-background-color);
+      color: rgb(255, 255, 255);
+      color: var(--button-text-color);
+      margin: 10px 10px 10px 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .more-info {
+      width: 100%;
+      font-size: 0.8rem;
+      display: flex;
+      overflow: auto;
+
+      .icon-info {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        .icon {
+          width: fit-content;
+          margin: 0 auto;
+        }
+
+        &::after {
+          content: attr(data-label);
+          font-size: smaller;
+          margin-top: 5px;
+          text-align: center;
+        }
+
+        >div {
+          .icon {
+            margin: 0;
+          }
+
+          display: flex;
+          justify-content: center;
+        }
+
+        &:not(:last-child) {
+          border-right: solid 1px rgba($color: white, $alpha: 0.2);
+        }
+      }
+    }
+
+    .info {
+      display: flex;
+      padding: 0 20px 0 20px;
+
+      .icon {
+        display: inline-flex;
+      }
+
+      .logo {
+        height: 100px;
+        width: 100px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 80px;
+      }
+
+      a {
+        max-width: fit-content;
+      }
+
+      .desc {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        :not(.name) {
+          font-size: 0.8rem;
+        }
+
+        .name {
+          margin-bottom: 5px;
+        }
+      }
+
+    }
+  }
+
+  .more-info-small {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.8rem;
+    opacity: 0.8;
+  }
+
+  .button-container {
+    padding: 0 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+
+    button {
+      margin: 0 10px;
+      border-radius: 4px;
+      max-width: 300px;
+
+      @media (max-width: 800px) {
+        &:only-child {
+          margin: 0 auto;
+        }
+      }
+
+      &[data-type='uninstall'] {
+        background-color: rgb(160, 51, 0) !important;
+        background-color: var(--danger-color) !important;
+        color: rgb(255, 255, 255) !important;
+        color: var(--danger-text-color) !important;
+      }
+    }
+
+    .error {
+      display: flex;
+      color: rgb(255, 185, 92);
+      color: var(--error-text-color);
+      align-items: center;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .body {
+    text-align: justify;
+    padding: 10px;
+    box-sizing: border-box;
+
+    pre,
+    code,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-align: left;
+    }
+
+    // class="language-xxx"
+    [class*="language-"] {
+      word-wrap: normal;
+      white-space: pre;
+      font-size: 0.8rem;
+      padding: 5px;
+      margin: 5px 0;
+      background-color: rgb(153, 153, 255);
+      background-color: var(--primary-color);
+      color: rgb(255, 255, 255);
+      color: var(--primary-text-color);
+      border-left: solid 5px rgb(51, 153, 255);
+      border-left: solid 5px var(--active-color);
+      overflow: auto;
+      width: calc(100% - 10px);
+      display: block;
+      user-select: text;
+    }
+  }
+
+  .version {
+    display: flex;
+    align-items: center;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 10px 0;
+  }
+}
+
+.reviews-container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 70vh;
+  top: auto;
+  bottom: 0;
+  background-color: rgb(255, 255, 255);
+  background-color: var(--secondary-color);
+  z-index: 999;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px var(--box-shadow-color);
+  border-radius: 40px 40px 0 0;
+  overflow: hidden;
+  animation: slide-up 0.3s ease-in-out;
+
+  &.hide {
+    transition: all 0.3s ease-in-out !important;
+    transform: translateY(100%) !important;
+  }
+
+  .reviews-header {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+      content: '';
+      width: 40px;
+      height: 5px;
+      border-radius: 2.5px;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .write-review {
+    padding: 0 10px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: fit-content;
+    margin: auto;
+
+    span {
+      height: fit-content;
+      margin: auto;
+    }
+
+    .icon {
+      height: 30px;
+      margin-right: 10px;
+    }
+  }
+
+  .reviews-body {
+    flex: 1;
+    overflow: auto;
+
+    &.loading {
+      @include loader(30px);
+    }
+
+    .review {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+
+      .review-author {
+        display: flex;
+        height: 30px;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 5px;
+
+        .vote {
+          height: 40px;
+          width: 40px;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 20px;
+        }
+
+        .user-profile {
+          height: 30px;
+          width: 30px;
+          border-radius: 50%;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          margin-right: 10px;
+          font-weight: 400;
+        }
+      }
+
+      .review-body {
+        display: flex;
+        align-items: center;
+        font-weight: 300;
+        overflow: auto;
+      }
+
+      .author-reply {
+        &::before {
+          display: block;
+          content: attr(data-author);
+          font-weight: 400;
+          margin-bottom: 10px;
+        }
+
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}

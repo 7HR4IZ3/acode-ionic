@@ -1,0 +1,63 @@
+#file-info {
+  .name {
+    min-height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .text {
+      font-size: 1.5rem;
+      font-weight: bold;
+      opacity: 1;
+    }
+  }
+
+  .share-button {
+    border: none;
+    box-sizing: border-box;
+    background-color: rgb(51, 153, 255);
+    background-color: var(--button-background-color);
+    color: rgb(255, 255, 255);
+    color: var(--primary-text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    min-width: fit-content;
+    margin: 5px auto;
+    padding: 0 10px;
+    border-radius: 20px;
+
+    * {
+      pointer-events: none;
+    }
+
+    .text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: left;
+    }
+
+    .icon {
+      height: 30px;
+      margin-right: 10px;
+    }
+  }
+
+  >div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    >span:first-child {
+      font-size: 0.95rem;
+      opacity: 0.5;
+      margin-right: 10px;
+    }
+
+    >span:last-child {
+      max-width: 100%;
+      overflow: auto;
+    }
+  }
+}
